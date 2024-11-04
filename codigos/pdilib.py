@@ -64,7 +64,41 @@ def operador_nand(img1, img2):
 
 def operador_xor(img1, img2):
     return cv2.bitwise_xor(img1, img2)
+#Operaciones aritmeticas
+def sumar_imagenes(img1, img2=None, valor=0):
+    if img2 is not None:
+        # Suma de dos imágenes
+        return cv2.add(img1, img2)
+    else:
+        # Suma de una imagen con un valor constante
+        return cv2.add(img1, np.full(img1.shape, valor, dtype=img1.dtype))
 
+# Función para la resta de dos imágenes o resta con un valor constante
+def restar_imagenes(img1, img2=None, valor=0):
+    if img2 is not None:
+        # Resta de dos imágenes
+        return cv2.subtract(img1, img2)
+    else:
+        # Resta de una imagen con un valor constante
+        return cv2.subtract(img1, np.full(img1.shape, valor, dtype=img1.dtype))
+
+# Función para la multiplicación de una imagen por otra o por un factor constante
+def multiplicar_imagenes(img1, img2=None, factor=1.0):
+    if img2 is not None:
+        # Multiplicación de dos imágenes
+        return cv2.multiply(img1, img2)
+    else:
+        # Multiplicación de una imagen con un factor constante
+        return cv2.multiply(img1, np.full(img1.shape, factor, dtype=img1.dtype))
+
+# Función para la división de una imagen por otra o por un divisor constante
+def dividir_imagenes(img1, img2=None, divisor=1.0):
+    if img2 is not None:
+        # División de dos imágenes
+        return cv2.divide(img1, img2)
+    else:
+        # División de una imagen por un divisor constante
+        return cv2.divide(img1, np.full(img1.shape, divisor, dtype=img1.dtype))
 #Transformaciones
 
 def negativo(imagen):
