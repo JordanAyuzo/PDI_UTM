@@ -100,6 +100,14 @@ def dividir_imagenes(img1, img2=None, divisor=1.0):
         # División de una imagen por un divisor constante
         return cv2.divide(img1, np.full(img1.shape, divisor, dtype=img1.dtype))
 #Transformaciones
+def normalizar_imagen_custom(f, K=255):
+    # Resta el mínimo valor de la imagen para obtener fm
+    fm = f - np.min(f)
+    # Divide por el valor máximo de fm y multiplica por K
+    fs = K * (fm / np.max(fm))
+    # Convierte la imagen resultante a tipo uint8
+    return fs.astype(np.uint8)
+
 
 def negativo(imagen):
     return 255 - imagen
