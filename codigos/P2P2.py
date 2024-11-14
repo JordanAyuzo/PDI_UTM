@@ -199,13 +199,13 @@ def MenuVarianza(img, titulo="Imagen"):
             histograma_img = histograma(img)
             comparacion(img, histograma_img, "Original", img_procesada, histograma(img_procesada), "Varianza Global")
         elif opc == 3:
-            humbral = int(input("Valor de humbral:"))
+            humbral = int(input("Valor de k:"))
             bloque = int(input("valor del bloque: "))
             img_procesada = local_media(img, humbral,bloque)
             histograma_img = histograma(img)
             comparacion(img, histograma_img, "Original", img_procesada, histograma(img_procesada), "Media Global")
         elif opc == 4:
-            humbral = int(input("Valor de humbral:"))
+            humbral = int(input("Valor de k:"))
             bloque = int(input("valor del bloque: "))
             img_procesada = local_varianza(img, humbral,bloque)
             histograma_img = histograma(img)
