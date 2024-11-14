@@ -9,6 +9,7 @@ YELLOW = "\033[33m"
 BLUE = "\033[34m"
 MAGENTA = "\033[35m"
 RESET = "\033[0m"  # Para restablecer el color
+RED = "\033[31m"
 
 
 def mostrarImagen(img,nombre):
@@ -214,6 +215,13 @@ def MenuVarianza(img, titulo="Imagen"):
 
 def MenuImagen(path, titulo="Imagen"):
     img = cv2.imread(path,0)
+    if img is None:
+        print("")
+        print(f"{RED}Error: No se pudo leer la imagen. Asegúrese de que la imagen exista y la ruta sea correcta.{RESET}")
+        print(f"{YELLOW}¨SUGERENCIA: Dirección correcta de la imagen: PDI_UTM/imagenes/[TU IMAGEN].{RESET}")
+        print(f"{YELLOW}¨SUGERENCIA: Si elegiste la opción de imagen personalizada solo es el nombre Ej: img.jpg.{RESET}")
+        input("Presione cualquier tecla para continuar...")
+        #return  
     while True:
         print(f"{BLUE}Imagen: {titulo}{RESET}")
         print("Menu:")
@@ -258,7 +266,6 @@ def MenuImagen(path, titulo="Imagen"):
 def main():
     # Limpiar la consola
     print("\033[H\033[J")
-    
     #Menu Principal
     while True:
         print(f"{BLUE}Elige una imagen para calcular su histograma{RESET}")
