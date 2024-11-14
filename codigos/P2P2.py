@@ -221,7 +221,7 @@ def MenuImagen(path, titulo="Imagen"):
         print(f"{YELLOW}¨SUGERENCIA: Dirección correcta de la imagen: PDI_UTM/imagenes/[TU IMAGEN].{RESET}")
         print(f"{YELLOW}¨SUGERENCIA: Si elegiste la opción de imagen personalizada solo es el nombre Ej: img.jpg.{RESET}")
         input("Presione cualquier tecla para continuar...")
-        #return  
+        return  
     while True:
         print(f"{BLUE}Imagen: {titulo}{RESET}")
         print("Menu:")
