@@ -296,3 +296,11 @@ def main():
             print("Opcion no valida")
 
 main()
+
+
+def mostrar_histograma(hist, xlabel, ylabel, color="blue"):
+    plt.figure(figsize=(8, 6))
+    plt.bar(range(len(hist)), hist, color=color, alpha=0.7)
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
+    plt.show()

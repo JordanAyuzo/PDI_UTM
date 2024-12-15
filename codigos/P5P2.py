@@ -31,7 +31,7 @@ def filtro_maximo(imagen, tamaño_kernel=3):
 def filtro_mediana(imagen, tamaño_kernel=3):
     return cv2.medianBlur(imagen, tamaño_kernel)
 
-def filtro_promedio(imagen, tamaño_kernel=3):
+def filtro_promedio(imagen, tamaño_kernel=3):    
     kernel = np.ones((tamaño_kernel, tamaño_kernel), np.float32) / (tamaño_kernel**2)
     return cv2.filter2D(imagen, -1, kernel)
 
